@@ -1,0 +1,23 @@
+# Intermediários
+.tmp/
+
+# Ambiente
+.env
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependências
+node_modules/
+venv/
+
+# Credenciais
+credentials.json
+token.json

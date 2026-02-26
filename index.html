@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Luiz Felipe Carvalho — Desenvolvedor backend & Técnico de TI</title>
+  <meta name="description"
+    content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend .NET/C#, Java e Python, Técnico de TI e estudante de Ciência da Computação na UEPB. Campina Grande, PB.">
+  <meta name="author" content="Luiz Felipe Carvalho">
+  <meta name="keywords"
+    content="desenvolvedor, backend, C#, .NET, ASP.NET, Campina Grande, portfólio, Luiz Felipe, UEPB, NUTES">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Luiz Felipe Carvalho — Desenvolvedor Backend & Técnico de TI">
+  <meta property="og:description"
+    content="Desenvolvedor Backend .NET/C#, Java e Python com foco em APIs RESTful, Docker e soluções robustas. Confira meus projetos.">
+  <meta property="og:image" content="assets/foto-perfil.jpg">
+  <meta property="og:url" content="https://luizlfc-dev.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Luiz Felipe Carvalho — Dev Backend">
+  <meta name="twitter:description" content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend .NET/C#.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/foto-perfil.jpg">
+
+  <!-- Fonts & CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luiz Felipe Carvalho",
+    "url": "https://luizlfc-dev.github.io",
+    "jobTitle": "Desenvolvedor Backend",
+    "description": "Desenvolvedor Backend .NET/C# e Técnico de TI",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Campina Grande",
+      "addressRegion": "PB",
+      "addressCountry": "BR"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "UEPB - Universidade Estadual da Paraíba"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "IFPB - Instituto Federal da Paraíba"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/luiz-felipe-carvalho-245058344/",
+      "https://github.com/Luizlfc-dev"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- Background Effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+  <div class="bg-glow bg-glow--3"></div>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__logo">
+        &lt;<span>Luiz</span>/&gt;
+      </a>
+      <div class="navbar__links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projetos</a>
+        <a href="#experience">Experiência</a>
+        <a href="#education">Formação</a>
+        <a href="#contact" class="navbar__cta">
+          Contato
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
+      </div>
+      <button class="navbar__menu-btn" id="menuBtn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container hero__content">
+      <p class="hero__greeting reveal">
+        <span class="wave">👋</span> Olá, eu sou
+      </p>
+      <h1 class="hero__title reveal reveal--delay-1">
+        <span class="line">LUIZ FELIPE</span>
+        <span class="line"><span class="highlight">BACKEND</span></span>
+        <span class="line">DEVELOPER</span>
+      </h1>
+      <p class="hero__subtitle reveal reveal--delay-2">
+        Estudante de Ciência da Computação e Técnico em Informática com foco em
+        desenvolvimento backend. Construindo soluções robustas com
+        <strong>C#/.NET</strong>, <strong>Java</strong>, <strong>Python</strong>, APIs RESTful e Docker.
+      </p>
+      <div class="hero__actions reveal reveal--delay-3">
+        <a href="#projects" class="btn btn--primary">
+          Ver Projetos
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="https://github.com/Luizlfc-dev" target="_blank" rel="noopener" class="btn btn--outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Shapes -->
+    <div class="hero__shapes">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero__scroll-indicator">
+      <div class="mouse"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__image-wrapper reveal">
+          <img src="assets/foto-perfil.jpg" alt="Luiz Felipe Carvalho" class="about__image" loading="lazy">
+        </div>
+        <div class="about__text">
+          <span class="section-label reveal">Sobre mim</span>
+          <h2 class="section-title reveal reveal--delay-1">
+            Transformando ideias em <span class="gradient-text">código robusto</span>
+          </h2>
+          <p class="reveal reveal--delay-2">
+            Sou <strong>Luiz Felipe Carvalho</strong>, 23 anos, de Campina Grande – PB.
+            Atualmente estou cursando <strong>Ciência da Computação na UEPB</strong> e trabalho como
+            Desenvolvedor de Software no laboratório <strong>LUFH</strong> do <strong>NUTES/UEPB – Unidade
+              EMBRAPII</strong>.
+          </p>
+          <p class="reveal reveal--delay-2">
+            Minha paixão é o desenvolvimento backend — com domínio em <strong>C#/.NET</strong>,
+            <strong>Java</strong> e <strong>Python</strong>, além de ASP.NET Core, APIs RESTful
+            e integração com bancos de dados. Também atuo como <strong>Técnico de TI autônomo</strong>,
+            realizando montagem, manutenção e configuração de equipamentos.
+          </p>
+          <p class="reveal reveal--delay-2">
+            Sempre buscando novos desafios, atualmente estou desenvolvendo um
+            <strong>servidor caseiro</strong> e trabalhando com <strong>LLMs</strong>
+            usando Ollama e Alexa.
+          </p>
+          <div class="about__stats reveal reveal--delay-3">
+            <div class="about__stat">
+              <div class="about__stat-number">3+</div>
+              <div class="about__stat-label">Anos como Técnico</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-number" id="projectCount">0</div>
+              <div class="about__stat-label">Projetos</div>
+            </div>
+            <div class="about__stat">
+              <div class="about__stat-number">.NET</div>
+              <div class="about__stat-label">Ecossistema</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <span class="section-label reveal">Habilidades</span>
+      <h2 class="section-title reveal reveal--delay-1">
+        Stack & <span class="gradient-text">Ferramentas</span>
+      </h2>
+      <div class="skills__grid">
+
+        <!-- Backend -->
+        <div class="skill-card reveal reveal--delay-1">
+          <div class="skill-card__icon">⚙️</div>
+          <h3 class="skill-card__title">Backend</h3>
+          <div class="skill-card__tags">
+            <span class="skill-card__tag">C#</span>
+            <span class="skill-card__tag">Java</span>
+            <span class="skill-card__tag">Python</span>
+            <span class="skill-card__tag">ASP.NET Core</span>
+            <span class="skill-card__tag">ASP.NET MVC</span>
+            <span class="skill-card__tag">.NET MAUI</span>
+            <span class="skill-card__tag">LLMs</span>
+            <span class="skill-card__tag">Avalonia</span>
+            <span class="skill-card__tag">APIs RESTful</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="skill-card reveal reveal--delay-2">
+          <div class="skill-card__icon">🗄️</div>
+          <h3 class="skill-card__title">Banco de Dados</h3>
+          <div class="skill-card__tags">
+            <span class="skill-card__tag">MySQL</span>
+            <span class="skill-card__tag">SQL Server</span>
+            <span class="skill-card__tag">Consultas SQL</span>
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="skill-card reveal reveal--delay-3">
+          <div class="skill-card__icon">🐳</div>
+          <h3 class="skill-card__title">DevOps & Ferramentas</h3>
+          <div class="skill-card__tags">
+            <span class="skill-card__tag">Docker</span>
+            <span class="skill-card__tag">Git / GitHub</span>
+            <span class="skill-card__tag">Azure DevOps</span>
+            <span class="skill-card__tag">WSL</span>
+          </div>
+        </div>
+
+        <!-- Hardware & IT -->
+        <div class="skill-card reveal reveal--delay-4">
+          <div class="skill-card__icon">🖥️</div>
+          <h3 class="skill-card__title">Hardware & TI</h3>
+          <div class="skill-card__tags">
+            <span class="skill-card__tag">Montagem de PCs</span>
+            <span class="skill-card__tag">Manutenção</span>
+            <span class="skill-card__tag">Windows / Linux</span>
+            <span class="skill-card__tag">Suporte Técnico</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="projects__header">
+        <div>
+          <span class="section-label reveal">Portfólio</span>
+          <h2 class="section-title reveal reveal--delay-1">
+            Projetos <span class="gradient-text">Selecionados</span>
+          </h2>
+        </div>
+        <div class="projects__controls reveal reveal--delay-2">
+          <div class="projects__filters">
+            <button class="projects__filter active" data-filter="all">Todos</button>
+            <button class="projects__filter" data-filter="Back-end">Backend</button>
+            <button class="projects__filter" data-filter="Automação">Automação</button>
+            <button class="projects__filter" data-filter="Web">Web</button>
+          </div>
+          <div class="projects__sort">
+            <button class="projects__sort-btn active" data-sort="recent" title="Mais recentes">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Recentes
+            </button>
+            <button class="projects__sort-btn" data-sort="stars" title="Mais estrelas">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              Stars
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="projects__grid" id="projectsGrid">
+        <!-- Projetos carregados dinamicamente via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label reveal">Trajetória</span>
+      <h2 class="section-title reveal reveal--delay-1">
+        Experiência <span class="gradient-text">Profissional</span>
+      </h2>
+      <div class="timeline">
+
+        <!-- NUTES -->
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__date">Setembro 2025 — Presente</span>
+            <h3 class="timeline__role">Desenvolvedor de Software (Aprendiz)</h3>
+            <p class="timeline__company">NUTES — UEPB · Unidade EMBRAPII · Campina Grande-PB</p>
+            <ul class="timeline__desc">
+              <li>Desenvolvimento de soluções mobile/desktop com C# e Avalonia</li>
+              <li>Implementação e consumo de APIs RESTful para integração entre aplicações</li>
+              <li>Integração com bancos de dados MySQL e SQL Server</li>
+              <li>Aplicação de melhores práticas em ambiente de pesquisa</li>
+              <li>Utilização de Git/GitHub e familiaridade com Docker</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Autônomo -->
+        <div class="timeline__item reveal reveal--delay-1">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__date">2022 — Presente</span>
+            <h3 class="timeline__role">Técnico de TI e Hardware</h3>
+            <p class="timeline__company">Profissional Autônomo · Campina Grande-PB</p>
+            <ul class="timeline__desc">
+              <li>Montagem personalizada de computadores com seleção de componentes</li>
+              <li>Diagnóstico e resolução de problemas de hardware e software</li>
+              <li>Formatação e configuração de sistemas (Windows/Linux)</li>
+              <li>Manutenção preventiva e otimização de desempenho</li>
+              <li>Suporte técnico direto ao cliente</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education" id="education">
+    <div class="container">
+      <span class="section-label reveal">Formação</span>
+      <h2 class="section-title reveal reveal--delay-1">
+        Formação Acadêmica & <span class="gradient-text">Certificações</span>
+      </h2>
+      <div class="education__grid">
+
+        <!-- Ciência da Computação -->
+        <div class="education-card reveal reveal--delay-1">
+          <div class="education-card__icon">🎓</div>
+          <div class="education-card__badge">Em andamento</div>
+          <h3 class="education-card__title">Ciência da Computação</h3>
+          <p class="education-card__institution">UEPB — Universidade Estadual da Paraíba</p>
+          <p class="education-card__location">Campus Campina Grande</p>
+          <span class="education-card__period">2024 — Presente</span>
+          <p class="education-card__desc">Graduação em Ciência da Computação com foco em desenvolvimento de software,
+            algoritmos e estruturas de dados.</p>
+        </div>
+
+        <!-- Técnico em Informática -->
+        <div class="education-card reveal reveal--delay-2">
+          <div class="education-card__icon">🏫</div>
+          <div class="education-card__badge education-card__badge--done">Concluído</div>
+          <h3 class="education-card__title">Técnico em Informática</h3>
+          <p class="education-card__institution">IFPB — Instituto Federal da Paraíba</p>
+          <p class="education-card__location">Campus Campina Grande</p>
+          <span class="education-card__period">2018 — 2022</span>
+          <p class="education-card__desc">Formação técnica em Informática com base em programação, redes, hardware e
+            manutenção de sistemas.</p>
+        </div>
+
+      </div>
+
+      <!-- Certificações -->
+      <h3 class="education__certifications-title reveal">Certificações</h3>
+      <div class="education__certifications reveal reveal--delay-1">
+        <div class="cert-item">
+          <span class="cert-item__icon">📄</span>
+          <div class="cert-item__info">
+            <strong>Microsoft Excel 2016</strong>
+            <span>Fundação Bradesco | Escola Virtual · 15h · Jun/2022</span>
+          </div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-item__icon">📄</span>
+          <div class="cert-item__info">
+            <strong>Microsoft Word 2016</strong>
+            <span>Fundação Bradesco | Escola Virtual · 9h · Jun/2022</span>
+          </div>
+        </div>
+        <div class="cert-item">
+          <span class="cert-item__icon">📄</span>
+          <div class="cert-item__info">
+            <strong>Microsoft PowerPoint 2016</strong>
+            <span>Fundação Bradesco | Escola Virtual · 8h · Jun/2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-label reveal" style="justify-content: center;">Contato</span>
+      <h2 class="contact__cta-title reveal reveal--delay-1">
+        Vamos criar algo<br><span class="gradient-text">incrível juntos.</span>
+      </h2>
+      <p class="contact__cta-desc reveal reveal--delay-2">
+        Estou disponível para oportunidades como desenvolvedor backend.
+        Entre em contato!
+      </p>
+      <div class="contact__links reveal reveal--delay-3">
+        <a href="mailto:lf.codes2002@gmail.com?subject=Contato%20via%20Portf%C3%B3lio" class="contact__link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          lf.codes2002@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/luiz-felipe-carvalho-245058344/" target="_blank" rel="noopener"
+          class="contact__link">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Luizlfc-dev" target="_blank" rel="noopener" class="contact__link">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copyright">
+        © 2026 Luiz Felipe Carvalho
+      </p>
+      <div class="footer__socials">
+        <a href="https://github.com/Luizlfc-dev" target="_blank" rel="noopener" class="footer__social"
+          aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/luiz-felipe-carvalho-245058344/" target="_blank" rel="noopener"
+          class="footer__social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="mailto:lf.codes2002@gmail.com" class="footer__social" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

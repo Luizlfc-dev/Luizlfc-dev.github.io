@@ -1,0 +1,89 @@
+{
+  "projects": [
+    {
+      "id": "projeto-jarvis-cerebro",
+      "title": "Projeto JARVIS",
+      "shortDescription": "Assistente de IA 100% privado e auto-hospedado inspirado no Jarvis.",
+      "fullDescription": "Um assistente de IA self-hosted construído com Home Assistant, Ollama, Whisper e Piper. Focado em privacidade total e controle de automação residencial.",
+      "technologies": [
+        "C#",
+        ".NET",
+        "Home Assistant",
+        "Ollama",
+        "Docker"
+      ],
+      "category": "Automação",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Projeto-Jarvis-Cerebro",
+      "liveUrl": "",
+      "language": "C#",
+      "stars": 1,
+      "forks": 1,
+      "updated_at": "2026-02-20T00:00:00Z",
+      "created_at": "2025-10-01T00:00:00Z"
+    },
+    {
+      "id": "sistema-odonto-csharp",
+      "title": "Sistema Odontológico",
+      "shortDescription": "Sistema completo para gestão de clínicas odontológicas.",
+      "fullDescription": "Sistema de gerenciamento odontológico desenvolvido em C# com funcionalidades de cadastro de pacientes, agendamento e prontuário.",
+      "technologies": [
+        "C#",
+        ".NET",
+        "SQL Server"
+      ],
+      "category": "Back-end",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Sistema-Odonto-csharp",
+      "liveUrl": "",
+      "language": "C#",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-01-15T00:00:00Z",
+      "created_at": "2025-06-01T00:00:00Z"
+    },
+    {
+      "id": "projeto-net-maui-docker",
+      "title": ".NET MAUI + Docker",
+      "shortDescription": "Aplicação .NET MAUI com SQL Server containerizado via Docker.",
+      "fullDescription": "Projeto de estudo para aplicar conhecimentos em .NET MAUI e SQL Server, com foco na containerização do banco de dados utilizando Docker no ambiente WSL.",
+      "technologies": [
+        "C#",
+        ".NET MAUI",
+        "Docker",
+        "SQL Server",
+        "WSL"
+      ],
+      "category": "Back-end",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Projeto_.NET_maui_e_Configura-o_Docker",
+      "liveUrl": "",
+      "language": "C#",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-12-10T00:00:00Z",
+      "created_at": "2025-08-01T00:00:00Z"
+    },
+    {
+      "id": "projetos-freecodecamp",
+      "title": "Projetos FreeCodeCamp",
+      "shortDescription": "Coleção de projetos web feitos em minicursos do FreeCodeCamp.",
+      "fullDescription": "Projetos de HTML, CSS e JavaScript desenvolvidos durante os cursos da plataforma FreeCodeCamp.",
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "category": "Web",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Projetos-FreeCodeCamp",
+      "liveUrl": "",
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-11-05T00:00:00Z",
+      "created_at": "2025-05-01T00:00:00Z"
+    }
+  ],
+  "lastSync": "2026-02-26T00:00:00Z"
+}
