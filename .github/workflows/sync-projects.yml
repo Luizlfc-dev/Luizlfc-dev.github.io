@@ -76,60 +76,28 @@ jobs:
           python3 << 'PYTHON_SCRIPT'
           import json
           import os
-          import glob
-          
-          repos_data = json.load(open('/tmp/repos.json'))
-          github_username = "Luizlfc-dev"
-          
-          # Filter out forks and profile repo
-          repos = [r for r in repos_data 
-                   if not r.get('fork', False) and r['name'] != github_username]
-          
-          projects = []
-          
-          for repo in repos:
-            name = repo['name']
-            readme_path = f"/tmp/readmes/{name}.md"
-            readme = ""
-            if os.path.exists(readme_path):
-              readme = open(readme_path).read()[:1000]
-            
-            # Try AI categorization
-            category = categorize_project(name, repo.get('description', ''), 
-                                          repo.get('language', ''), readme)
-            
-            # Build project entry
-            project = {
-              "id": name.lower().replace(' ', '-'),
-              "title": humanize_name(name),
-              "shortDescription": repo.get('description', '') or generate_description(name, readme),
-              "fullDescription": readme[:500] if readme else repo.get('description', ''),
-              "technologies": get_technologies(repo, readme),
-              "category": category,
-              "heroImage": "",
-              "repoUrl": repo['html_url'],
-              "liveUrl": repo.get('homepage', '') or '',
-              "language": repo.get('language', '') or 'N/A',
-              "stars": repo.get('stargazers_count', 0),
-              "forks": repo.get('forks_count', 0),
-              "updated_at": repo.get('updated_at', ''),
-              "created_at": repo.get('created_at', '')
-            }
-            projects.append(project)
-          
-          # Sort by stars then updated date
-          projects.sort(key=lambda p: p['stars'], reverse=True)
-          
+          import urllib.request
           from datetime import datetime, timezone
-          output = {
-            "projects": projects,
-            "lastSync": datetime.now(timezone.utc).isoformat()
-          }
           
-          with open('data.json', 'w', encoding='utf-8') as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
+          github_username = "Luizlfc-dev"
+          # Also exclude the portfolio repo itself
+          exclude_repos = [github_username, "Luizlfc-dev.github.io"]
           
-          print(f"✅ Synced {len(projects)} projects")
+          
+          def heuristic_categorize(name, description, language, readme):
+            """Fallback categorization based on keywords."""
+            text = f"{name} {description} {readme}".lower()
+            
+            if any(w in text for w in ['automation', 'automação', 'home assistant', 'jarvis', 'alexa', 'iot']):
+              return 'Automação'
+            elif any(w in text for w in ['html', 'css', 'frontend', 'website', 'web', 'react', 'freecodecamp']):
+              return 'Web'
+            elif any(w in text for w in ['hardware', 'rede', 'network', 'server', 'servidor']):
+              return 'Hardware/Redes'
+            elif language in ['C#', 'Python', 'Java', 'Go']:
+              return 'Back-end'
+            else:
+              return 'Web'
           
           
           def categorize_project(name, description, language, readme):
@@ -138,7 +106,6 @@ jobs:
             
             if api_key:
               try:
-                import urllib.request
                 prompt = f"Categorize this project into one of: Back-end, Automação, Web, Hardware/Redes. Project: {name}. Description: {description}. Language: {language}. README excerpt: {readme[:300]}. Reply with ONLY the category name."
                 
                 data = json.dumps({
@@ -175,34 +142,16 @@ jobs:
             return heuristic_categorize(name, description, language, readme)
           
           
-          def heuristic_categorize(name, description, language, readme):
-            """Fallback categorization based on keywords."""
-            text = f"{name} {description} {readme}".lower()
-            
-            if any(w in text for w in ['automation', 'automação', 'home assistant', 'jarvis', 'alexa', 'iot']):
-              return 'Automação'
-            elif any(w in text for w in ['html', 'css', 'frontend', 'website', 'web', 'react', 'freecodecamp']):
-              return 'Web'
-            elif any(w in text for w in ['hardware', 'rede', 'network', 'server', 'servidor']):
-              return 'Hardware/Redes'
-            elif language in ['C#', 'Python', 'Java', 'Go']:
-              return 'Back-end'
-            else:
-              return 'Web'
-          
-          
           def humanize_name(name):
             """Convert repo name to human-readable title."""
             name = name.replace('-', ' ').replace('_', ' ')
             name = name.replace('.github.io', ' (Site)')
-            # Title case
             return ' '.join(word.capitalize() for word in name.split())
           
           
           def generate_description(name, readme):
             """Generate a short description from name/readme."""
             if readme:
-              # Get first meaningful line from README
               lines = readme.strip().split('\n')
               for line in lines:
                 clean = line.strip('#').strip()
@@ -222,8 +171,10 @@ jobs:
             
             tech_map = {
               '.net': '.NET', 'asp.net': 'ASP.NET', 'maui': '.NET MAUI',
-              'docker': 'Docker', 'sql server': 'SQL Server', 'mysql': 'MySQL',
+              'avalonia': 'Avalonia', 'docker': 'Docker',
+              'sql server': 'SQL Server', 'mysql': 'MySQL',
               'react': 'React', 'node': 'Node.js', 'python': 'Python',
+              'java': 'Java', 'spring': 'Spring Boot',
               'home assistant': 'Home Assistant', 'ollama': 'Ollama',
               'whisper': 'Whisper', 'piper': 'Piper',
               'html': 'HTML', 'css': 'CSS', 'javascript': 'JavaScript',
@@ -234,7 +185,58 @@ jobs:
               if keyword in text and tech_name not in techs:
                 techs.append(tech_name)
             
-            return techs[:6]  # Limit to 6 tags
+            return techs[:6]
+          
+          
+          # ===== MAIN =====
+          repos_data = json.load(open('/tmp/repos.json'))
+          
+          # Filter out forks, profile repo and portfolio repo
+          repos = [r for r in repos_data 
+                   if not r.get('fork', False) and r['name'] not in exclude_repos]
+          
+          projects = []
+          
+          for repo in repos:
+            name = repo['name']
+            readme_path = f"/tmp/readmes/{name}.md"
+            readme = ""
+            if os.path.exists(readme_path):
+              readme = open(readme_path).read()[:1000]
+            
+            category = categorize_project(name, repo.get('description', ''), 
+                                          repo.get('language', ''), readme)
+            
+            project = {
+              "id": name.lower().replace(' ', '-'),
+              "title": humanize_name(name),
+              "shortDescription": repo.get('description', '') or generate_description(name, readme),
+              "fullDescription": readme[:500] if readme else repo.get('description', ''),
+              "technologies": get_technologies(repo, readme),
+              "category": category,
+              "heroImage": "",
+              "repoUrl": repo['html_url'],
+              "liveUrl": repo.get('homepage', '') or '',
+              "language": repo.get('language', '') or 'N/A',
+              "stars": repo.get('stargazers_count', 0),
+              "forks": repo.get('forks_count', 0),
+              "updated_at": repo.get('updated_at', ''),
+              "created_at": repo.get('created_at', '')
+            }
+            projects.append(project)
+          
+          # Sort by updated date (most recent first)
+          projects.sort(key=lambda p: p.get('updated_at', ''), reverse=True)
+          
+          output = {
+            "projects": projects,
+            "lastSync": datetime.now(timezone.utc).isoformat()
+          }
+          
+          with open('data.json', 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=2, ensure_ascii=False)
+          
+          print(f"✅ Synced {len(projects)} projects")
           
           PYTHON_SCRIPT
 
