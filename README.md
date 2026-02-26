@@ -4,7 +4,7 @@
 
 **Portfólio profissional com atualização automática de projetos via GitHub Actions + IA.**
 
-[🔗 Ver o Site](https://luizlfc-dev.github.io) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)
+[🔗 Ver o Site](https://luizlfc-dev.github.io/) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)
 
 </div>
 
