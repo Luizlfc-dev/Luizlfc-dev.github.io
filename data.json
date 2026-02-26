@@ -1,16 +1,36 @@
 {
   "projects": [
     {
+      "id": "desafio-estagio-axur",
+      "title": "Desafio Estagio Axur",
+      "shortDescription": "Desafio para estágio de engenharia de software - AXUR",
+      "fullDescription": "# HTML Depth Analyzer\n\nEste projeto é uma ferramenta de linha de comando desenvolvida em Java para analisar a estrutura de páginas HTML e identificar o conteúdo de texto localizado no nível mais profundo da árvore de elementos.\n\nO desafio faz parte do processo seletivo para o estágio de Engenharia de Software na Axur.\n\n## 📖 Minha Jornada neste Processo Seletivo\n\nMinha trajetória até este desafio técnico foi marcada por um intenso processo de aprendizado e evolução. Desde o primeiro contato com o",
+      "technologies": [
+        "Java",
+        "HTML"
+      ],
+      "category": "Web",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Desafio-Estagio-Axur",
+      "liveUrl": "",
+      "language": "Java",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-02-26T07:34:07Z",
+      "created_at": "2026-02-26T07:32:28Z"
+    },
+    {
       "id": "projeto-jarvis-cerebro",
-      "title": "Projeto JARVIS",
-      "shortDescription": "Assistente de IA 100% privado e auto-hospedado inspirado no Jarvis.",
-      "fullDescription": "Um assistente de IA self-hosted construído com Home Assistant, Ollama, Whisper e Piper. Focado em privacidade total e controle de automação residencial.",
+      "title": "Projeto Jarvis Cerebro",
+      "shortDescription": "Um assistente de IA 100% privado e auto-hospedado (self-hosted) inspirado no Jarvis, construído com Home Assistant, Ollama, Whisper e Piper.",
+      "fullDescription": "# Projeto Jarvis (Servidor + App Cliente)\n\n[![Umbrel](https://img.shields.io/badge/Umbrel_OS-brightgreen?style=for-the-badge&logo=linux)](https://umbrel.com/) [![Home Assistant](https://img.shields.io/badge/Home_Assistant-41BDF5?style=for-the-badge&logo=home-assistant)](https://www.home-assistant.io/) [![.NET MAUI](https://img.shields.io/badge/.NET_MAUI-512BD4?style=for-the-badge&logo=dotnet)](https://dotnet.microsoft.com/apps/maui) [![Ollama](https://img.shields.io/badge/Ollama-black?style=for-",
       "technologies": [
         "C#",
         ".NET",
+        ".NET MAUI",
         "Home Assistant",
         "Ollama",
-        "Docker"
+        "Whisper"
       ],
       "category": "Automação",
       "heroImage": "",
@@ -19,60 +39,17 @@
       "language": "C#",
       "stars": 1,
       "forks": 1,
-      "updated_at": "2026-02-20T00:00:00Z",
-      "created_at": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "sistema-odonto-csharp",
-      "title": "Sistema Odontológico",
-      "shortDescription": "Sistema completo para gestão de clínicas odontológicas.",
-      "fullDescription": "Sistema de gerenciamento odontológico desenvolvido em C# com funcionalidades de cadastro de pacientes, agendamento e prontuário.",
-      "technologies": [
-        "C#",
-        ".NET",
-        "SQL Server"
-      ],
-      "category": "Back-end",
-      "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Sistema-Odonto-csharp",
-      "liveUrl": "",
-      "language": "C#",
-      "stars": 0,
-      "forks": 0,
-      "updated_at": "2026-01-15T00:00:00Z",
-      "created_at": "2025-06-01T00:00:00Z"
-    },
-    {
-      "id": "projeto-net-maui-docker",
-      "title": ".NET MAUI + Docker",
-      "shortDescription": "Aplicação .NET MAUI com SQL Server containerizado via Docker.",
-      "fullDescription": "Projeto de estudo para aplicar conhecimentos em .NET MAUI e SQL Server, com foco na containerização do banco de dados utilizando Docker no ambiente WSL.",
-      "technologies": [
-        "C#",
-        ".NET MAUI",
-        "Docker",
-        "SQL Server",
-        "WSL"
-      ],
-      "category": "Back-end",
-      "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Projeto_.NET_maui_e_Configura-o_Docker",
-      "liveUrl": "",
-      "language": "C#",
-      "stars": 0,
-      "forks": 0,
-      "updated_at": "2025-12-10T00:00:00Z",
-      "created_at": "2025-08-01T00:00:00Z"
+      "updated_at": "2026-01-15T23:37:22Z",
+      "created_at": "2025-11-14T06:04:22Z"
     },
     {
       "id": "projetos-freecodecamp",
-      "title": "Projetos FreeCodeCamp",
-      "shortDescription": "Coleção de projetos web feitos em minicursos do FreeCodeCamp.",
-      "fullDescription": "Projetos de HTML, CSS e JavaScript desenvolvidos durante os cursos da plataforma FreeCodeCamp.",
+      "title": "Projetos Freecodecamp",
+      "shortDescription": "Projetos feitos em minicursos do FreeCodeCamp.",
+      "fullDescription": "# Meus Projetos e Exercícios do FreeCodeCamp\n\nOlá! 👋 Sou um desenvolvedor em formação e este repositório serve como um diário da minha jornada de aprendizado na plataforma [freeCodeCamp](https://www.freecodecamp.org/). Aqui, você encontrará os códigos dos projetos e dos principais exercícios que desenvolvi.\n\nO objetivo é documentar meu progresso, criar um portfólio prático e, quem sabe, ajudar outros que estão no mesmo caminho!\n\n---\n\n## 📜 Certificações em Andamento\n\nAtualmente, estou focado em o",
       "technologies": [
         "HTML",
-        "CSS",
-        "JavaScript"
+        "CSS"
       ],
       "category": "Web",
       "heroImage": "",
@@ -81,9 +58,50 @@
       "language": "HTML",
       "stars": 0,
       "forks": 0,
-      "updated_at": "2025-11-05T00:00:00Z",
-      "created_at": "2025-05-01T00:00:00Z"
+      "updated_at": "2025-12-20T23:05:35Z",
+      "created_at": "2025-09-26T15:15:00Z"
+    },
+    {
+      "id": "projeto_.net_maui_e_configura-o_docker",
+      "title": "Projeto .net Maui E Configura O Docker",
+      "shortDescription": "Projeto de estudo para aplicar conhecimentos em .NET MAUI e SQL Server, com foco na containerização do banco de dados SQL Server utilizando Docker no ambiente WSL.",
+      "fullDescription": "# 🍔 Guia: Cadastro de Alimentos com .NET MAUI 9 no VS Code\n\nEste guia consolida o passo a passo para criar um aplicativo CRUD (Criar, Ler, Atualizar, Excluir) completo em .NET MAUI, utilizando o padrão MVVM e Entity Framework Core para acesso ao banco de dados SQL Server.\n\n---\n\n## 🚀 Parte 1: Ambiente e Pré-requisitos\n\nGaranta que você tem tudo instalado para começar:\n\n* **.NET 9 SDK**: Verifique a versão no terminal com o comando `dotnet --version`. A saída deve começar com `9.x.x`.\n* **Carga de",
+      "technologies": [
+        "C#",
+        ".NET",
+        ".NET MAUI",
+        "Docker",
+        "SQL Server",
+        "WSL"
+      ],
+      "category": "Hardware/Redes",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Projeto_.NET_maui_e_Configura-o_Docker",
+      "liveUrl": "",
+      "language": "C#",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-10-23T11:29:22Z",
+      "created_at": "2025-10-21T05:10:56Z"
+    },
+    {
+      "id": "sistema-odonto-csharp",
+      "title": "Sistema Odonto Csharp",
+      "shortDescription": "Projeto Sistema Odonto Csharp",
+      "fullDescription": "\n",
+      "technologies": [
+        "C#"
+      ],
+      "category": "Back-end",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Sistema-Odonto-csharp",
+      "liveUrl": "",
+      "language": "C#",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-10-02T14:53:30Z",
+      "created_at": "2025-09-24T14:00:08Z"
     }
   ],
-  "lastSync": "2026-02-26T00:00:00Z"
+  "lastSync": "2026-02-26T07:44:46.014296+00:00"
 }
