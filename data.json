@@ -1,71 +1,26 @@
 {
   "projects": [
     {
-      "id": "projeto-jarvis-cerebro",
-      "title": "Projeto JARVIS",
-      "shortDescription": "Assistente de IA 100% privado e auto-hospedado inspirado no Jarvis.",
-      "fullDescription": "Um assistente de IA self-hosted construído com Home Assistant, Ollama, Whisper e Piper. Focado em privacidade total e controle de automação residencial.",
+      "id": "projeto---make-an-instagram-app",
+      "title": "Projeto Make An Instagram App",
+      "shortDescription": "Projeto de estudo para aplicar o meu conhecimento tecnologias em desenvolvimento de interface grafica",
+      "fullDescription": "# Woofstagram - Make an Instagram App (React Native)\n\nProjeto desenvolvido com **React Native + Expo (JavaScript)** seguindo os roteiros dos PDFs:\n\n- **Projeto 7 - Make an Instagram App** (formulário de cadastro completo de tutor + pet) Carlos André\n- **Projeto 8 - Make an Instagram App** (home com componentes reutilizáveis, cards e posts) José Agra\n- **Projeto 9 - Make an Instagram App** (navegação Stack + Tabs) Luiz Felipe Carvalho\n\nO foco principal foi construir a estrutura de navegação do ap",
       "technologies": [
-        "C#",
-        ".NET",
-        "Home Assistant",
-        "Ollama",
-        "Docker",
-        "React"
+        "JavaScript",
+        "React",
+        "React Native",
+        "Expo",
+        "Java"
       ],
-      "category": "Automação",
+      "category": "Mobile",
       "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Projeto-Jarvis-Cerebro",
+      "repoUrl": "https://github.com/Luizlfc-dev/Projeto---Make-an-Instagram-App",
       "liveUrl": "",
-      "language": "C#",
-      "stars": 1,
-      "forks": 1,
-      "updated_at": "2026-02-20T00:00:00Z",
-      "created_at": "2025-10-01T00:00:00Z"
-    },
-    {
-      "id": "sistema-odonto-csharp",
-      "title": "Sistema Odontológico",
-      "shortDescription": "Sistema completo para gestão de clínicas odontológicas.",
-      "fullDescription": "Sistema de gerenciamento odontológico desenvolvido em C# com funcionalidades de cadastro de pacientes, agendamento e prontuário.",
-      "technologies": [
-        "C#",
-        ".NET",
-        "SQL Server",
-        "React Native"
-      ],
-      "category": "Back-end",
-      "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Sistema-Odonto-csharp",
-      "liveUrl": "",
-      "language": "C#",
+      "language": "JavaScript",
       "stars": 0,
       "forks": 0,
-      "updated_at": "2026-01-15T00:00:00Z",
-      "created_at": "2025-06-01T00:00:00Z"
-    },
-    {
-      "id": "projeto-net-maui-docker",
-      "title": ".NET MAUI + Docker",
-      "shortDescription": "Aplicação .NET MAUI com SQL Server containerizado via Docker.",
-      "fullDescription": "Projeto de estudo para aplicar conhecimentos em .NET MAUI e SQL Server, com foco na containerização do banco de dados utilizando Docker no ambiente WSL.",
-      "technologies": [
-        "C#",
-        ".NET MAUI",
-        "Docker",
-        "SQL Server",
-        "WSL",
-        "React Native"
-      ],
-      "category": "Back-end",
-      "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Projeto_.NET_maui_e_Configura-o_Docker",
-      "liveUrl": "",
-      "language": "C#",
-      "stars": 0,
-      "forks": 0,
-      "updated_at": "2025-12-10T00:00:00Z",
-      "created_at": "2025-08-01T00:00:00Z"
+      "updated_at": "2026-04-10T05:32:22Z",
+      "created_at": "2026-04-10T03:16:15Z"
     },
     {
       "id": "projetos-freecodecamp",
@@ -74,9 +29,7 @@
       "fullDescription": "# Meus Projetos e Exercícios do FreeCodeCamp\n\nOlá! 👋 Sou um desenvolvedor em formação e este repositório serve como um diário da minha jornada de aprendizado na plataforma [freeCodeCamp](https://www.freecodecamp.org/). Aqui, você encontrará os códigos dos projetos e dos principais exercícios que desenvolvi.\n\nO objetivo é documentar meu progresso, criar um portfólio prático e, quem sabe, ajudar outros que estão no mesmo caminho!\n\n---\n\n## 📜 Certificações em Andamento\n\nAtualmente, estou focado em o",
       "technologies": [
         "HTML",
-        "CSS",
-        "JavaScript",
-        "React"
+        "CSS"
       ],
       "category": "Mobile",
       "heroImage": "",
@@ -174,30 +127,62 @@
   ],
   "certificates": [
     {
-      "id": "microsoft-excel-2016",
-      "title": "Microsoft Excel 2016",
-      "issuer": "Fundação Bradesco | Escola Virtual",
-      "workload": "15h",
-      "issuedAt": "Jun/2022",
-      "fileUrl": ""
+      "id": "certificates-certificado-1-word",
+      "title": "Certificado (1)word",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado (1)word.pdf"
     },
     {
-      "id": "microsoft-word-2016",
-      "title": "Microsoft Word 2016",
-      "issuer": "Fundação Bradesco | Escola Virtual",
-      "workload": "9h",
-      "issuedAt": "Jun/2022",
-      "fileUrl": ""
+      "id": "certificates-certificado-2-powerpoint",
+      "title": "Certificado (2)powerpoint",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado (2)powerpoint.pdf"
     },
     {
-      "id": "microsoft-powerpoint-2016",
-      "title": "Microsoft PowerPoint 2016",
-      "issuer": "Fundação Bradesco | Escola Virtual",
-      "workload": "8h",
-      "issuedAt": "Jun/2022",
-      "fileUrl": ""
+      "id": "certificates-certificado-de-concluso",
+      "title": "Certificado De Concluso",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado_de_concluso.pdf"
+    },
+    {
+      "id": "certificates-certificado-de-concluso-1",
+      "title": "Certificado De Concluso (1)",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado_de_concluso (1).pdf"
+    },
+    {
+      "id": "certificates-certificado-de-concluso-2",
+      "title": "Certificado De Concluso (2)",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado_de_Concluso (2).pdf"
+    },
+    {
+      "id": "certificates-certificado-de-concluso-3",
+      "title": "Certificado De Concluso (3)",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado_de_concluso (3).pdf"
+    },
+    {
+      "id": "certificates-certificadoexcel",
+      "title": "Certificadoexcel",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificadoexcel.pdf"
     }
   ],
-  "lastSync": "2026-02-26T00:00:00Z",
-  "lastCertificatesSync": "2026-02-26T00:00:00Z"
+  "lastSync": "2026-04-13T00:13:40.495655+00:00",
+  "lastCertificatesSync": "2026-04-13T00:13:40.495673+00:00"
 }
