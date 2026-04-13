@@ -162,6 +162,8 @@ function renderProjects(projects) {
     const coverStyle = project.heroImage
       ? `style="background-image: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.68) 100%), url('${project.heroImage}'); background-size: cover; background-position: center;"`
       : '';
+    const language = project.language || 'N/A';
+    const forks = Number(project.forks || 0);
     const liveLink = project.liveUrl
       ? `<a href="${project.liveUrl}" target="_blank" rel="noopener" class="project-card__action project-card__action--primary">Demo</a>`
       : '';
@@ -171,15 +173,19 @@ function renderProjects(projects) {
     const dateLabel = project.updated_at
       ? formatDate(project.updated_at)
       : '';
+    const techPreview = (project.technologies || []).slice(0, 4);
+    const techExtra = (project.technologies || []).length - techPreview.length;
 
     return `
       <article class="project-card reveal ${delayClass}" data-category="${project.category}">
         <div class="project-card__cover" ${coverStyle}>
           <span class="project-card__category ${categoryClass}">${project.category}</span>
+          <span class="project-card__language">${language}</span>
         </div>
         <div class="project-card__header">
           <div class="project-card__meta">
             ${starsHtml}
+            ${forks > 0 ? `<span class="project-card__forks">🍴 ${forks}</span>` : ''}
             <a href="${project.repoUrl}" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver repositório">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
@@ -193,7 +199,8 @@ function renderProjects(projects) {
           <a href="${project.repoUrl}" target="_blank" rel="noopener" class="project-card__action">Repositório</a>
         </div>
         <div class="project-card__tech">
-          ${project.technologies.map(tech => `<span class="project-card__tech-tag">${tech}</span>`).join('')}
+          ${techPreview.map(tech => `<span class="project-card__tech-tag">${tech}</span>`).join('')}
+          ${techExtra > 0 ? `<span class="project-card__tech-tag project-card__tech-tag--more">+${techExtra}</span>` : ''}
         </div>
       </article>
     `;
@@ -287,16 +294,33 @@ function renderCertificates(certificates) {
   grid.innerHTML = certificates.map((cert, index) => {
     const delayClass = `reveal--delay-${Math.min(index + 1, 4)}`;
     const hasFile = cert.fileUrl && cert.fileUrl.trim().length > 0;
+    const safeFileUrl = hasFile ? encodeURI(cert.fileUrl.trim()) : '';
+    const isImageFile = hasFile && /\.(png|jpe?g|webp|gif|avif)$/i.test(safeFileUrl);
+    const isPdfFile = hasFile && /\.pdf$/i.test(safeFileUrl);
     const action = hasFile
-      ? `<a href="${cert.fileUrl}" target="_blank" rel="noopener" class="cert-item__link">Abrir</a>`
+      ? `
+        <div class="cert-item__actions">
+          <a href="${safeFileUrl}" target="_blank" rel="noopener" class="cert-item__link">Visualizar</a>
+          <a href="${safeFileUrl}" target="_blank" rel="noopener" download class="cert-item__link cert-item__link--ghost">Baixar</a>
+        </div>
+      `
       : '';
     const issuer = cert.issuer || 'Certificação';
     const workload = cert.workload ? ` · ${cert.workload}` : '';
     const issuedAt = cert.issuedAt ? ` · ${cert.issuedAt}` : '';
+    const preview = isImageFile
+      ? `<img class="cert-item__preview-img" src="${safeFileUrl}" alt="Prévia do certificado ${cert.title}" loading="lazy">`
+      : isPdfFile
+        ? `
+          <object class="cert-item__preview-pdf" data="${safeFileUrl}#page=1&toolbar=0&navpanes=0" type="application/pdf">
+            <span class="cert-item__preview-fallback">PDF</span>
+          </object>
+        `
+        : `<span class="cert-item__preview-fallback">Arquivo</span>`;
 
     return `
       <article class="cert-item cert-item--dynamic reveal ${delayClass}">
-        <span class="cert-item__icon">🏅</span>
+        <div class="cert-item__preview">${preview}</div>
         <div class="cert-item__info">
           <strong>${cert.title}</strong>
           <span>${issuer}${workload}${issuedAt}</span>

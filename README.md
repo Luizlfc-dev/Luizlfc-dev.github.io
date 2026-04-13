@@ -173,7 +173,7 @@ Acesse **http://localhost:8080** no navegador.
 
 Adicione novos arquivos em `certificates/` com extensões `.pdf`, `.png`, `.jpg`, `.jpeg` ou `.webp`.
 
-No próximo run do workflow `Sync GitHub Projects`, esses arquivos serão convertidos automaticamente para a seção de certificações do site (sem edição manual de `index.html`).
+No próximo run do workflow `Sync GitHub Projects`, esses arquivos serão convertidos automaticamente para a seção de certificações do site (sem edição manual de `index.html`), incluindo preview visual quando possível.
 
 ### Variáveis de Ambiente (Secrets do GitHub)
 
