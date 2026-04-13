@@ -95,6 +95,13 @@ function updateProjectCount(count) {
   }
 }
 
+function updateCertificateCount(count) {
+  const el = document.getElementById('certificateCount');
+  if (el) {
+    animateCounter(el, 0, count, 800);
+  }
+}
+
 function animateCounter(el, start, end, duration) {
   const startTime = performance.now();
 
@@ -276,7 +283,12 @@ async function loadCertificates() {
 
 function renderCertificates(certificates) {
   const grid = document.getElementById('certificationsGrid');
-  if (!grid) return;
+  const prevBtn = document.getElementById('certPrevBtn');
+  const nextBtn = document.getElementById('certNextBtn');
+  const dotsEl = document.getElementById('certificationsDots');
+  if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
+
+  updateCertificateCount(certificates.length);
 
   if (certificates.length === 0) {
     grid.innerHTML = `
@@ -288,6 +300,9 @@ function renderCertificates(certificates) {
         </div>
       </div>
     `;
+    dotsEl.innerHTML = '';
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
     return;
   }
 
@@ -305,11 +320,12 @@ function renderCertificates(certificates) {
         </div>
       `
       : '';
-    const issuer = cert.issuer || 'Certificação';
-    const workload = cert.workload ? ` · ${cert.workload}` : '';
-    const issuedAt = cert.issuedAt ? ` · ${cert.issuedAt}` : '';
+    const title = cert.title || 'Certificado';
+    const issuer = cert.issuer || 'Não informado';
+    const workload = cert.workload || 'Não informado';
+    const issuedAt = cert.issuedAt || 'Não informada';
     const preview = isImageFile
-      ? `<img class="cert-item__preview-img" src="${safeFileUrl}" alt="Prévia do certificado ${cert.title}" loading="lazy">`
+      ? `<img class="cert-item__preview-img" src="${safeFileUrl}" alt="Prévia do certificado ${title}" loading="lazy">`
       : isPdfFile
         ? `
           <object class="cert-item__preview-pdf" data="${safeFileUrl}#page=1&toolbar=0&navpanes=0" type="application/pdf">
@@ -322,20 +338,27 @@ function renderCertificates(certificates) {
       <article class="cert-item cert-item--dynamic reveal ${delayClass}">
         <div class="cert-item__preview">${preview}</div>
         <div class="cert-item__info">
-          <strong>${cert.title}</strong>
-          <span>${issuer}${workload}${issuedAt}</span>
+          <strong>${title}</strong>
+          <span><b>Organização:</b> ${issuer}</span>
+          <span><b>Carga horária:</b> ${workload}</span>
+          <span><b>Data:</b> ${issuedAt}</span>
         </div>
         ${action}
       </article>
     `;
   }).join('');
 
+  initCertificatesCarousel(certificates.length);
   initScrollReveal();
 }
 
 function renderCertificatesFallback() {
   const grid = document.getElementById('certificationsGrid');
-  if (!grid) return;
+  const prevBtn = document.getElementById('certPrevBtn');
+  const nextBtn = document.getElementById('certNextBtn');
+  const dotsEl = document.getElementById('certificationsDots');
+  if (!grid || !prevBtn || !nextBtn || !dotsEl) return;
+  updateCertificateCount(3);
 
   grid.innerHTML = `
     <div class="cert-item">
@@ -360,6 +383,51 @@ function renderCertificatesFallback() {
       </div>
     </div>
   `;
+
+  initCertificatesCarousel(3);
+}
+
+function initCertificatesCarousel(itemsCount) {
+  const track = document.getElementById('certificationsGrid');
+  const prevBtn = document.getElementById('certPrevBtn');
+  const nextBtn = document.getElementById('certNextBtn');
+  const dotsEl = document.getElementById('certificationsDots');
+  if (!track || !prevBtn || !nextBtn || !dotsEl) return;
+
+  let current = 0;
+  const max = Math.max(itemsCount - 1, 0);
+
+  dotsEl.innerHTML = Array.from({ length: itemsCount }).map((_, idx) =>
+    `<button class="cert-carousel__dot ${idx === 0 ? 'active' : ''}" data-cert-index="${idx}" aria-label="Ir para certificado ${idx + 1}"></button>`
+  ).join('');
+
+  const dots = dotsEl.querySelectorAll('.cert-carousel__dot');
+
+  function updateCarousel() {
+    track.style.transform = `translateX(calc(-${current * 100}% - ${current * 16}px))`;
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current >= max;
+    dots.forEach((dot, idx) => dot.classList.toggle('active', idx === current));
+  }
+
+  prevBtn.onclick = () => {
+    current = Math.max(0, current - 1);
+    updateCarousel();
+  };
+  nextBtn.onclick = () => {
+    current = Math.min(max, current + 1);
+    updateCarousel();
+  };
+  dots.forEach(dot => {
+    dot.onclick = () => {
+      const idx = Number(dot.getAttribute('data-cert-index'));
+      if (Number.isNaN(idx)) return;
+      current = Math.min(Math.max(idx, 0), max);
+      updateCarousel();
+    };
+  });
+
+  updateCarousel();
 }
 
 /* ---- Project Filters ---- */

@@ -127,62 +127,62 @@
   ],
   "certificates": [
     {
-      "id": "certificates-certificado-1-word",
-      "title": "Certificado (1)word",
-      "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
-      "fileUrl": "certificates/Certificado (1)word.pdf"
-    },
-    {
-      "id": "certificates-certificado-2-powerpoint",
-      "title": "Certificado (2)powerpoint",
-      "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
-      "fileUrl": "certificates/Certificado (2)powerpoint.pdf"
-    },
-    {
-      "id": "certificates-certificado-de-concluso",
-      "title": "Certificado De Concluso",
-      "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
-      "fileUrl": "certificates/Certificado_de_concluso.pdf"
-    },
-    {
-      "id": "certificates-certificado-de-concluso-1",
-      "title": "Certificado De Concluso (1)",
-      "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
-      "fileUrl": "certificates/Certificado_de_concluso (1).pdf"
-    },
-    {
       "id": "certificates-certificado-de-concluso-2",
-      "title": "Certificado De Concluso (2)",
+      "title": "Fundamentos de Eletricidade",
       "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
+      "workload": "6h",
+      "issuedAt": "12/04/26",
       "fileUrl": "certificates/Certificado_de_Concluso (2).pdf"
     },
     {
       "id": "certificates-certificado-de-concluso-3",
-      "title": "Certificado De Concluso (3)",
+      "title": "Fundamentos de Inteligência Artificial para Sistemas Embarcados",
       "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
+      "workload": "8h",
+      "issuedAt": "12/04/26",
       "fileUrl": "certificates/Certificado_de_concluso (3).pdf"
     },
     {
-      "id": "certificates-certificadoexcel",
-      "title": "Certificadoexcel",
+      "id": "certificates-certificado-de-concluso",
+      "title": "Fundamentos em Python",
       "issuer": "Certificado",
-      "workload": "",
+      "workload": "8h",
+      "issuedAt": "11/04/26",
+      "fileUrl": "certificates/Certificado_de_concluso.pdf"
+    },
+    {
+      "id": "certificates-certificado-de-concluso-1",
+      "title": "Introdução a Sistemas Embarcados",
+      "issuer": "Certificado",
+      "workload": "8h",
+      "issuedAt": "12/04/26",
+      "fileUrl": "certificates/Certificado_de_concluso (1).pdf"
+    },
+    {
+      "id": "certificates-certificadoexcel",
+      "title": "MICROSOFT EXCEL 2016 - BÁSICO",
+      "issuer": "Fundação Bradesco | Escola Virtual",
+      "workload": "15h",
       "issuedAt": "",
       "fileUrl": "certificates/Certificadoexcel.pdf"
+    },
+    {
+      "id": "certificates-certificado-2-powerpoint",
+      "title": "MICROSOFT POWERPOINT 2016 - BÁSICO",
+      "issuer": "Fundação Bradesco | Escola Virtual",
+      "workload": "8h",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado (2)powerpoint.pdf"
+    },
+    {
+      "id": "certificates-certificado-do-word",
+      "title": "MICROSOFT WORD 2016 - BÁSICO",
+      "issuer": "Fundação Bradesco | Escola Virtual",
+      "workload": "9h",
+      "issuedAt": "",
+      "fileUrl": "certificates/Certificado do Word.pdf"
     }
   ],
   "lastSync": "2026-04-13T00:13:40.495655+00:00",
-  "lastCertificatesSync": "2026-04-13T00:13:40.495673+00:00"
+  "lastCertificatesSync": "2026-04-13T01:58:05.190175+00:00"
 }

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**Portfólio profissional com atualização automática de projetos via GitHub Actions + IA.**
+**Portfólio profissional com atualização automática de projetos e certificados via GitHub Actions + IA.**
 
 [🔗 Ver o Site](https://luizlfc-dev.github.io/) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)
 
@@ -12,7 +12,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **Live Engine** é um portfólio pessoal desenvolvido para ser uma vitrine profissional dinâmica e automatizada. Diferente de portfólios estáticos tradicionais, este projeto se **auto-atualiza**: a cada push no repositório, um workflow do GitHub Actions sincroniza automaticamente os projetos do meu perfil GitHub, categoriza-os com inteligência artificial e atualiza o site publicado.
+O **Live Engine** é um portfólio pessoal desenvolvido para ser uma vitrine profissional dinâmica e automatizada. Diferente de portfólios estáticos tradicionais, este projeto se **auto-atualiza**: a cada push no repositório, um workflow do GitHub Actions sincroniza automaticamente os projetos do meu perfil GitHub (incluindo o próprio repositório do site), descobre novos certificados na pasta `certificates/`, categoriza os projetos com inteligência artificial e atualiza o site publicado.
 
 ### Por que "Live Engine"?
 
@@ -42,10 +42,10 @@ O projeto segue uma arquitetura em **3 camadas** para manter organização e esc
 
 ```
 📁 site-portifolio/
-├── 📄 index.html           # Página principal (6 seções)
+├── 📄 index.html           # Página principal (seções dinâmicas)
 ├── 🎨 style.css            # Design system completo
 ├── ⚡ script.js            # Interatividade e dados dinâmicos
-├── 📊 data.json            # Dados dos projetos (auto-gerado)
+├── 📊 data.json            # Dados de projetos + certificados (auto-gerado)
 ├── 📁 assets/
 │   └── 🖼️ foto-perfil.jpg  # Foto pessoal
 ├── 📁 certificates/        # Certificados (pdf/png/jpg) para sync automático
@@ -63,11 +63,12 @@ O projeto segue uma arquitetura em **3 camadas** para manter organização e esc
 
 A cada **push na branch main** (ou semanalmente), o workflow:
 
-1. **Busca** todos os repositórios públicos via API do GitHub
+1. **Busca** todos os repositórios públicos via API do GitHub (incluindo `Luizlfc-dev.github.io`)
 2. **Lê** o README de cada repositório para extrair detalhes
-3. **Categoriza** cada projeto usando **GPT-4o mini** (com fallback heurístico caso não tenha API key)
-4. **Atualiza** o arquivo `data.json` com os dados mais recentes
-5. **Faz commit** automático das mudanças, que disparam o deploy
+3. **Categoriza** cada projeto usando **Gemini** (com fallback heurístico caso não tenha API key)
+4. **Descobre** certificados automaticamente pela pasta `certificates/`
+5. **Atualiza** o arquivo `data.json` com os dados mais recentes
+6. **Faz commit** automático das mudanças, que disparam o deploy
 
 ### 2. Deploy Automático (deploy.yml)
 
@@ -83,7 +84,10 @@ O JavaScript no cliente:
 
 - **Carrega** `data.json` e renderiza os cards de projetos
 - **Carrega** certificações automaticamente da chave `certificates`
+- **Exibe certificados em carrossel** (evita seção longa)
+- **Exibe preview** de certificados (imagem/PDF quando suportado)
 - **Conta** automaticamente a quantidade de projetos (com animação)
+- **Conta** automaticamente a quantidade de certificados (com animação)
 - Permite **filtrar** por categoria (Backend, Automação, Web)
 - Permite **ordenar** por data (Recentes) ou estrelas (Stars)
 - **Anima** os elementos ao scroll (Intersection Observer)
@@ -124,7 +128,8 @@ O design foi criado com base em referências visuais de portfólios modernos, pr
 - **GitHub Actions** — CI/CD para sincronização e deploy
 - **GitHub Pages** — Hospedagem gratuita
 - **GitHub API** — Fetch de repositórios e READMEs
-- **OpenAI GPT-4o mini** — Categorização inteligente de projetos (opcional)
+- **Google Gemini** — Categorização inteligente de projetos (opcional)
+- **Python + pypdf** — Extração automática de metadados dos certificados PDF
 
 ### SEO
 - **Meta tags** — Title, description, keywords, author
@@ -139,11 +144,11 @@ O design foi criado com base em referências visuais de portfólios modernos, pr
 | Seção | Descrição |
 |-------|-----------|
 | **Hero** | Apresentação com título animado e CTAs |
-| **Sobre** | Foto, biografia e estatísticas com contador dinâmico |
+| **Sobre** | Foto, biografia e estatísticas com contador dinâmico de projetos e certificados |
 | **Skills** | Cards com tecnologias organizadas por área |
-| **Projetos** | Galeria dinâmica com filtros e ordenação |
+| **Projetos** | Galeria dinâmica com filtros, ordenação e cards aprimorados |
 | **Experiência** | Timeline profissional |
-| **Formação** | Cards acadêmicos + certificações dinâmicas |
+| **Formação** | Cards acadêmicos + certificações dinâmicas em carrossel com preview |
 | **Contato** | Links diretos (email com mailto, LinkedIn, GitHub) |
 
 ---
@@ -174,6 +179,19 @@ Acesse **http://localhost:8080** no navegador.
 Adicione novos arquivos em `certificates/` com extensões `.pdf`, `.png`, `.jpg`, `.jpeg` ou `.webp`.
 
 No próximo run do workflow `Sync GitHub Projects`, esses arquivos serão convertidos automaticamente para a seção de certificações do site (sem edição manual de `index.html`), incluindo preview visual quando possível.
+
+Para arquivos PDF, o workflow também tenta extrair automaticamente:
+- **Título do certificado**
+- **Organização emissora**
+- **Carga horária**
+- **Data**
+
+Quando não for possível extrair com confiança, aplica fallback para nome do arquivo.
+Se o PDF tiver pouco texto selecionável, o título ainda é inferido pelo nome do arquivo para manter a seção legível.
+
+### Contadores automáticos
+
+Os contadores de **Projetos** e **Certificados** são alimentados automaticamente pelo `data.json` e atualizados em tempo real no carregamento da página.
 
 ### Variáveis de Ambiente (Secrets do GitHub)
 
