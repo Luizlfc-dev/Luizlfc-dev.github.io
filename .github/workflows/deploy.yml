@@ -9,6 +9,7 @@ on:
       - 'script.js'
       - 'data.json'
       - 'assets/**'
+      - 'certificates/**'
   workflow_dispatch:
 
 permissions:

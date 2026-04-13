@@ -48,6 +48,7 @@ O projeto segue uma arquitetura em **3 camadas** para manter organização e esc
 ├── 📊 data.json            # Dados dos projetos (auto-gerado)
 ├── 📁 assets/
 │   └── 🖼️ foto-perfil.jpg  # Foto pessoal
+├── 📁 certificates/        # Certificados (pdf/png/jpg) para sync automático
 ├── 📁 .github/workflows/
 │   ├── 🔄 sync-projects.yml  # Sincronização automática
 │   └── 🚀 deploy.yml         # Deploy no GitHub Pages
@@ -81,6 +82,7 @@ Quando `index.html`, `style.css`, `script.js` ou `data.json` são alterados:
 O JavaScript no cliente:
 
 - **Carrega** `data.json` e renderiza os cards de projetos
+- **Carrega** certificações automaticamente da chave `certificates`
 - **Conta** automaticamente a quantidade de projetos (com animação)
 - Permite **filtrar** por categoria (Backend, Automação, Web)
 - Permite **ordenar** por data (Recentes) ou estrelas (Stars)
@@ -141,7 +143,7 @@ O design foi criado com base em referências visuais de portfólios modernos, pr
 | **Skills** | Cards com tecnologias organizadas por área |
 | **Projetos** | Galeria dinâmica com filtros e ordenação |
 | **Experiência** | Timeline profissional |
-| **Formação** | Cards acadêmicos + certificações |
+| **Formação** | Cards acadêmicos + certificações dinâmicas |
 | **Contato** | Links diretos (email com mailto, LinkedIn, GitHub) |
 
 ---
@@ -166,6 +168,12 @@ Acesse **http://localhost:8080** no navegador.
 ---
 
 ## 📝 Configuração
+
+### Certificados automáticos
+
+Adicione novos arquivos em `certificates/` com extensões `.pdf`, `.png`, `.jpg`, `.jpeg` ou `.webp`.
+
+No próximo run do workflow `Sync GitHub Projects`, esses arquivos serão convertidos automaticamente para a seção de certificações do site (sem edição manual de `index.html`).
 
 ### Variáveis de Ambiente (Secrets do GitHub)
 

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollReveal();
   loadProjects();
+  loadCertificates();
   initActiveNavLinks();
 });
 
@@ -158,6 +159,12 @@ function renderProjects(projects) {
   grid.innerHTML = projects.map((project, index) => {
     const categoryClass = getCategoryClass(project.category);
     const delayClass = `reveal--delay-${Math.min(index + 1, 4)}`;
+    const coverStyle = project.heroImage
+      ? `style="background-image: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, 0.68) 100%), url('${project.heroImage}'); background-size: cover; background-position: center;"`
+      : '';
+    const liveLink = project.liveUrl
+      ? `<a href="${project.liveUrl}" target="_blank" rel="noopener" class="project-card__action project-card__action--primary">Demo</a>`
+      : '';
     const starsHtml = project.stars > 0
       ? `<span class="project-card__stars">⭐ ${project.stars}</span>`
       : '';
@@ -167,8 +174,10 @@ function renderProjects(projects) {
 
     return `
       <article class="project-card reveal ${delayClass}" data-category="${project.category}">
-        <div class="project-card__header">
+        <div class="project-card__cover" ${coverStyle}>
           <span class="project-card__category ${categoryClass}">${project.category}</span>
+        </div>
+        <div class="project-card__header">
           <div class="project-card__meta">
             ${starsHtml}
             <a href="${project.repoUrl}" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver repositório">
@@ -179,6 +188,10 @@ function renderProjects(projects) {
         <h3 class="project-card__title">${project.title}</h3>
         <p class="project-card__desc">${project.shortDescription}</p>
         ${dateLabel ? `<p class="project-card__date">Atualizado em ${dateLabel}</p>` : ''}
+        <div class="project-card__actions">
+          ${liveLink}
+          <a href="${project.repoUrl}" target="_blank" rel="noopener" class="project-card__action">Repositório</a>
+        </div>
         <div class="project-card__tech">
           ${project.technologies.map(tech => `<span class="project-card__tech-tag">${tech}</span>`).join('')}
         </div>
@@ -206,7 +219,8 @@ function getCategoryClass(category) {
   const classes = {
     'Back-end': 'project-card__category--backend',
     'Automação': 'project-card__category--automation',
-    'Web': 'project-card__category--web'
+    'Web': 'project-card__category--web',
+    'Mobile': 'project-card__category--mobile'
   };
   return classes[category] || '';
 }
@@ -217,14 +231,19 @@ function renderProjectsFallback() {
 
   grid.innerHTML = `
     <div class="project-card reveal">
-      <div class="project-card__header">
+      <div class="project-card__cover">
         <span class="project-card__category project-card__category--automation">Automação</span>
+      </div>
+      <div class="project-card__header">
         <a href="https://github.com/Luizlfc-dev/Projeto-Jarvis-Cerebro" target="_blank" rel="noopener" class="project-card__link" aria-label="Ver repositório">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </a>
       </div>
       <h3 class="project-card__title">Projeto JARVIS</h3>
       <p class="project-card__desc">Assistente de IA 100% privado e auto-hospedado inspirado no Jarvis.</p>
+      <div class="project-card__actions">
+        <a href="https://github.com/Luizlfc-dev/Projeto-Jarvis-Cerebro" target="_blank" rel="noopener" class="project-card__action">Repositório</a>
+      </div>
       <div class="project-card__tech">
         <span class="project-card__tech-tag">C#</span>
         <span class="project-card__tech-tag">.NET</span>
@@ -234,6 +253,89 @@ function renderProjectsFallback() {
   `;
 
   initScrollReveal();
+}
+
+/* ---- Certifications ---- */
+async function loadCertificates() {
+  try {
+    const response = await fetch('data.json');
+    const data = await response.json();
+    renderCertificates(data.certificates || []);
+  } catch (error) {
+    console.warn('Não foi possível carregar certificados do data.json:', error);
+    renderCertificatesFallback();
+  }
+}
+
+function renderCertificates(certificates) {
+  const grid = document.getElementById('certificationsGrid');
+  if (!grid) return;
+
+  if (certificates.length === 0) {
+    grid.innerHTML = `
+      <div class="cert-item">
+        <span class="cert-item__icon">📄</span>
+        <div class="cert-item__info">
+          <strong>Nenhum certificado publicado ainda</strong>
+          <span>Adicione arquivos na pasta certificates/ para publicação automática.</span>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = certificates.map((cert, index) => {
+    const delayClass = `reveal--delay-${Math.min(index + 1, 4)}`;
+    const hasFile = cert.fileUrl && cert.fileUrl.trim().length > 0;
+    const action = hasFile
+      ? `<a href="${cert.fileUrl}" target="_blank" rel="noopener" class="cert-item__link">Abrir</a>`
+      : '';
+    const issuer = cert.issuer || 'Certificação';
+    const workload = cert.workload ? ` · ${cert.workload}` : '';
+    const issuedAt = cert.issuedAt ? ` · ${cert.issuedAt}` : '';
+
+    return `
+      <article class="cert-item cert-item--dynamic reveal ${delayClass}">
+        <span class="cert-item__icon">🏅</span>
+        <div class="cert-item__info">
+          <strong>${cert.title}</strong>
+          <span>${issuer}${workload}${issuedAt}</span>
+        </div>
+        ${action}
+      </article>
+    `;
+  }).join('');
+
+  initScrollReveal();
+}
+
+function renderCertificatesFallback() {
+  const grid = document.getElementById('certificationsGrid');
+  if (!grid) return;
+
+  grid.innerHTML = `
+    <div class="cert-item">
+      <span class="cert-item__icon">📄</span>
+      <div class="cert-item__info">
+        <strong>Microsoft Excel 2016</strong>
+        <span>Fundação Bradesco | Escola Virtual · 15h · Jun/2022</span>
+      </div>
+    </div>
+    <div class="cert-item">
+      <span class="cert-item__icon">📄</span>
+      <div class="cert-item__info">
+        <strong>Microsoft Word 2016</strong>
+        <span>Fundação Bradesco | Escola Virtual · 9h · Jun/2022</span>
+      </div>
+    </div>
+    <div class="cert-item">
+      <span class="cert-item__icon">📄</span>
+      <div class="cert-item__info">
+        <strong>Microsoft PowerPoint 2016</strong>
+        <span>Fundação Bradesco | Escola Virtual · 8h · Jun/2022</span>
+      </div>
+    </div>
+  `;
 }
 
 /* ---- Project Filters ---- */

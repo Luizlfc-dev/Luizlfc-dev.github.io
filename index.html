@@ -6,17 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>Luiz Felipe Carvalho — Desenvolvedor backend & Técnico de TI</title>
+  <title>Luiz Felipe Carvalho — Desenvolvedor backend, React & Técnico de TI</title>
   <meta name="description"
-    content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend .NET/C#, Java e Python, Técnico de TI e estudante de Ciência da Computação na UEPB. Campina Grande, PB.">
+    content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend .NET/C#, Java, Python, React e React Native, Técnico de TI e estudante de Ciência da Computação na UEPB. Campina Grande, PB.">
   <meta name="author" content="Luiz Felipe Carvalho">
   <meta name="keywords"
-    content="desenvolvedor, backend, C#, .NET, ASP.NET, Campina Grande, portfólio, Luiz Felipe, UEPB, NUTES">
+    content="desenvolvedor, backend, C#, .NET, ASP.NET, React, React Native, Campina Grande, portfólio, Luiz Felipe, UEPB, NUTES">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Luiz Felipe Carvalho — Desenvolvedor Backend & Técnico de TI">
   <meta property="og:description"
-    content="Desenvolvedor Backend .NET/C#, Java e Python com foco em APIs RESTful, Docker e soluções robustas. Confira meus projetos.">
+    content="Desenvolvedor Backend .NET/C#, Java, Python, React e React Native com foco em APIs RESTful, Docker e soluções robustas. Confira meus projetos.">
   <meta property="og:image" content="assets/foto-perfil.jpg">
   <meta property="og:url" content="https://luizlfc-dev.github.io">
   <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Luiz Felipe Carvalho — Dev Backend">
-  <meta name="twitter:description" content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend .NET/C#.">
+    <meta name="twitter:description" content="Portfólio de Luiz Felipe Carvalho — Desenvolvedor Backend, React e React Native.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/foto-perfil.jpg">
@@ -120,8 +120,8 @@
       </h1>
       <p class="hero__subtitle reveal reveal--delay-2">
         Estudante de Ciência da Computação e Técnico em Informática com foco em
-        desenvolvimento backend. Construindo soluções robustas com
-        <strong>C#/.NET</strong>, <strong>Java</strong>, <strong>Python</strong>, APIs RESTful e Docker.
+        desenvolvimento backend e aplicações modernas. Construindo soluções robustas com
+        <strong>C#/.NET</strong>, <strong>Java</strong>, <strong>Python</strong>, <strong>React</strong>, <strong>React Native</strong>, APIs RESTful e Docker.
       </p>
       <div class="hero__actions reveal reveal--delay-3">
         <a href="#projects" class="btn btn--primary">
@@ -226,7 +226,9 @@
             <span class="skill-card__tag">.NET MAUI</span>
             <span class="skill-card__tag">LLMs</span>
             <span class="skill-card__tag">Avalonia</span>
-            <span class="skill-card__tag">APIs RESTful</span>
+             <span class="skill-card__tag">APIs RESTful</span>
+             <span class="skill-card__tag">React</span>
+             <span class="skill-card__tag">React Native</span>
           </div>
         </div>
 
@@ -285,6 +287,7 @@
             <button class="projects__filter" data-filter="Back-end">Backend</button>
             <button class="projects__filter" data-filter="Automação">Automação</button>
             <button class="projects__filter" data-filter="Web">Web</button>
+            <button class="projects__filter" data-filter="Mobile">Mobile</button>
           </div>
           <div class="projects__sort">
             <button class="projects__sort-btn active" data-sort="recent" title="Mais recentes">
@@ -395,28 +398,8 @@
 
       <!-- Certificações -->
       <h3 class="education__certifications-title reveal">Certificações</h3>
-      <div class="education__certifications reveal reveal--delay-1">
-        <div class="cert-item">
-          <span class="cert-item__icon">📄</span>
-          <div class="cert-item__info">
-            <strong>Microsoft Excel 2016</strong>
-            <span>Fundação Bradesco | Escola Virtual · 15h · Jun/2022</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <span class="cert-item__icon">📄</span>
-          <div class="cert-item__info">
-            <strong>Microsoft Word 2016</strong>
-            <span>Fundação Bradesco | Escola Virtual · 9h · Jun/2022</span>
-          </div>
-        </div>
-        <div class="cert-item">
-          <span class="cert-item__icon">📄</span>
-          <div class="cert-item__info">
-            <strong>Microsoft PowerPoint 2016</strong>
-            <span>Fundação Bradesco | Escola Virtual · 8h · Jun/2022</span>
-          </div>
-        </div>
+      <div class="education__certifications reveal reveal--delay-1" id="certificationsGrid">
+        <!-- Certificados carregados dinamicamente via JS -->
       </div>
     </div>
   </section>

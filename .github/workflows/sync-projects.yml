@@ -4,10 +4,8 @@ on:
   push:
     branches: [ main ]
   schedule:
-    # Executa toda segunda-feira às 6h UTC
     - cron: '0 6 * * 1'
   workflow_dispatch:
-    # Permite execução manual
 
 permissions:
   contents: write
@@ -15,7 +13,7 @@ permissions:
 jobs:
   sync-projects:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -31,11 +29,8 @@ jobs:
           GITHUB_USERNAME: Luizlfc-dev
         run: |
           echo "Fetching repos for $GITHUB_USERNAME..."
-          
-          # Fetch public repos
           REPOS=$(curl -s "https://api.github.com/users/$GITHUB_USERNAME/repos?per_page=100&sort=updated" \
             -H "Accept: application/vnd.github.v3+json")
-          
           echo "$REPOS" > /tmp/repos.json
           echo "repos_file=/tmp/repos.json" >> $GITHUB_OUTPUT
 
@@ -44,8 +39,6 @@ jobs:
           GITHUB_USERNAME: Luizlfc-dev
         run: |
           mkdir -p /tmp/readmes
-          
-          # Get repo names from JSON
           REPO_NAMES=$(cat /tmp/repos.json | python3 -c "
           import json, sys
           repos = json.load(sys.stdin)
@@ -53,7 +46,7 @@ jobs:
             if not r.get('fork', False) and r['name'] != '$GITHUB_USERNAME':
               print(r['name'])
           ")
-          
+
           for repo in $REPO_NAMES; do
             echo "Fetching README for $repo..."
             README=$(curl -s "https://api.github.com/repos/$GITHUB_USERNAME/$repo/readme" \
@@ -76,81 +69,70 @@ jobs:
           python3 << 'PYTHON_SCRIPT'
           import json
           import os
+          import re
           import urllib.request
           from datetime import datetime, timezone
           
           github_username = "Luizlfc-dev"
-          # Also exclude the portfolio repo itself
           exclude_repos = [github_username, "Luizlfc-dev.github.io"]
+          certificates_dir = "certificates"
           
           
           def heuristic_categorize(name, description, language, readme):
-            """Fallback categorization based on keywords."""
             text = f"{name} {description} {readme}".lower()
-            
+            if any(w in text for w in ['react native', 'expo', 'mobile', 'android', 'ios']):
+              return 'Mobile'
             if any(w in text for w in ['automation', 'automação', 'home assistant', 'jarvis', 'alexa', 'iot']):
               return 'Automação'
-            elif any(w in text for w in ['html', 'css', 'frontend', 'website', 'web', 'react', 'freecodecamp']):
+            if any(w in text for w in ['html', 'css', 'frontend', 'website', 'web', 'react', 'freecodecamp']):
               return 'Web'
-            elif any(w in text for w in ['hardware', 'rede', 'network', 'server', 'servidor']):
+            if any(w in text for w in ['hardware', 'rede', 'network', 'server', 'servidor']):
               return 'Hardware/Redes'
-            elif language in ['C#', 'Python', 'Java', 'Go']:
+            if language in ['C#', 'Python', 'Java', 'Go']:
               return 'Back-end'
-            else:
-              return 'Web'
+            return 'Web'
           
           
           def categorize_project(name, description, language, readme):
-            """Categorize using Gemini API or fallback heuristics."""
             api_key = os.getenv('GEMINI_API_KEY', '')
-            
             if api_key:
               try:
-                prompt = f"Categorize this project into one of: Back-end, Automação, Web, Hardware/Redes. Project: {name}. Description: {description}. Language: {language}. README excerpt: {readme[:300]}. Reply with ONLY the category name."
-                
+                prompt = (
+                  "Categorize this project into one of: Back-end, Automação, Web, Mobile, Hardware/Redes. "
+                  f"Project: {name}. Description: {description}. Language: {language}. "
+                  f"README excerpt: {readme[:300]}. Reply with ONLY the category name."
+                )
                 data = json.dumps({
                   "contents": [{"parts": [{"text": prompt}]}],
-                  "generationConfig": {
-                    "maxOutputTokens": 20,
-                    "temperature": 0
-                  }
+                  "generationConfig": {"maxOutputTokens": 20, "temperature": 0}
                 }).encode()
-                
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
-                
-                req = urllib.request.Request(
-                  url,
-                  data=data,
-                  headers={
-                    "Content-Type": "application/json"
-                  }
-                )
-                
+                req = urllib.request.Request(url, data=data, headers={"Content-Type": "application/json"})
                 resp = urllib.request.urlopen(req, timeout=15)
                 result = json.loads(resp.read())
                 cat = result['candidates'][0]['content']['parts'][0]['text'].strip()
-                
-                # Validate category
-                valid = ['Back-end', 'Automação', 'Web', 'Hardware/Redes']
+                valid = ['Back-end', 'Automação', 'Web', 'Mobile', 'Hardware/Redes']
                 for v in valid:
                   if v.lower() in cat.lower():
                     return v
               except Exception as e:
                 print(f"AI categorization failed for {name}: {e}")
-            
-            # Fallback: heuristic categorization
             return heuristic_categorize(name, description, language, readme)
           
           
           def humanize_name(name):
-            """Convert repo name to human-readable title."""
             name = name.replace('-', ' ').replace('_', ' ')
             name = name.replace('.github.io', ' (Site)')
             return ' '.join(word.capitalize() for word in name.split())
           
           
+          def slugify(text):
+            text = text.lower().strip()
+            text = re.sub(r'[^a-z0-9]+', '-', text)
+            return text.strip('-')
+          
+          
           def generate_description(name, readme):
-            """Generate a short description from name/readme."""
             if readme:
               lines = readme.strip().split('\n')
               for line in lines:
@@ -161,52 +143,65 @@ jobs:
           
           
           def get_technologies(repo, readme):
-            """Extract technologies from repo data."""
             techs = []
             lang = repo.get('language', '')
             if lang:
               techs.append(lang)
-            
             text = f"{repo.get('description', '')} {readme}".lower()
-            
             tech_map = {
               '.net': '.NET', 'asp.net': 'ASP.NET', 'maui': '.NET MAUI',
               'avalonia': 'Avalonia', 'docker': 'Docker',
               'sql server': 'SQL Server', 'mysql': 'MySQL',
-              'react': 'React', 'node': 'Node.js', 'python': 'Python',
-              'java': 'Java', 'spring': 'Spring Boot',
+              'react': 'React', 'react native': 'React Native', 'expo': 'Expo',
+              'node': 'Node.js', 'python': 'Python', 'java': 'Java', 'spring': 'Spring Boot',
               'home assistant': 'Home Assistant', 'ollama': 'Ollama',
               'whisper': 'Whisper', 'piper': 'Piper',
               'html': 'HTML', 'css': 'CSS', 'javascript': 'JavaScript',
               'wsl': 'WSL', 'azure': 'Azure'
             }
-            
             for keyword, tech_name in tech_map.items():
               if keyword in text and tech_name not in techs:
                 techs.append(tech_name)
-            
             return techs[:6]
           
           
-          # ===== MAIN =====
+          def discover_certificates():
+            certs = []
+            allowed = {'.pdf', '.png', '.jpg', '.jpeg', '.webp'}
+            if not os.path.isdir(certificates_dir):
+              return certs
+            for root, _, files in os.walk(certificates_dir):
+              for filename in files:
+                ext = os.path.splitext(filename)[1].lower()
+                if ext not in allowed:
+                  continue
+                if filename.lower().startswith('.'):
+                  continue
+                full_path = os.path.join(root, filename)
+                rel_path = os.path.relpath(full_path, '.').replace('\\', '/')
+                title_raw = os.path.splitext(filename)[0].replace('_', ' ').replace('-', ' ').strip()
+                title = ' '.join(word.capitalize() for word in title_raw.split()) or filename
+                certs.append({
+                  "id": slugify(os.path.splitext(rel_path)[0]),
+                  "title": title,
+                  "issuer": "Certificado",
+                  "workload": "",
+                  "issuedAt": "",
+                  "fileUrl": rel_path
+                })
+            certs.sort(key=lambda c: c['title'].lower())
+            return certs
+          
+          
           repos_data = json.load(open('/tmp/repos.json'))
-          
-          # Filter out forks, profile repo and portfolio repo
-          repos = [r for r in repos_data 
-                   if not r.get('fork', False) and r['name'] not in exclude_repos]
-          
+          repos = [r for r in repos_data if not r.get('fork', False) and r['name'] not in exclude_repos]
           projects = []
           
           for repo in repos:
             name = repo['name']
             readme_path = f"/tmp/readmes/{name}.md"
-            readme = ""
-            if os.path.exists(readme_path):
-              readme = open(readme_path).read()[:1000]
-            
-            category = categorize_project(name, repo.get('description', ''), 
-                                          repo.get('language', ''), readme)
-            
+            readme = open(readme_path).read()[:1000] if os.path.exists(readme_path) else ""
+            category = categorize_project(name, repo.get('description', ''), repo.get('language', ''), readme)
             project = {
               "id": name.lower().replace(' ', '-'),
               "title": humanize_name(name),
@@ -225,31 +220,31 @@ jobs:
             }
             projects.append(project)
           
-          # Sort by updated date (most recent first)
           projects.sort(key=lambda p: p.get('updated_at', ''), reverse=True)
+          certificates = discover_certificates()
           
           output = {
             "projects": projects,
-            "lastSync": datetime.now(timezone.utc).isoformat()
+            "certificates": certificates,
+            "lastSync": datetime.now(timezone.utc).isoformat(),
+            "lastCertificatesSync": datetime.now(timezone.utc).isoformat()
           }
           
           with open('data.json', 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
           
           print(f"✅ Synced {len(projects)} projects")
-          
+          print(f"✅ Synced {len(certificates)} certificates from /{certificates_dir}")
           PYTHON_SCRIPT
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
           git add data.json
-          
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🔄 Auto-sync: update projects from GitHub"
+            git commit -m "🔄 Auto-sync: update projects and certificates"
             git push
           fi
