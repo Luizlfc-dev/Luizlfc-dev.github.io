@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "id": "luizlfc-dev.github.io",
+      "title": "Luizlfc Dev (site)",
+      "shortDescription": "🚀 Live Engine — Portfólio Pessoal",
+      "fullDescription": "# 🚀 Live Engine — Portfólio Pessoal\n\n<div align=\"center\">\n\n**Portfólio profissional com atualização automática de projetos via GitHub Actions + IA.**\n\n[🔗 Ver o Site](https://luizlfc-dev.github.io/) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)\n\n</div>\n\n---\n\n## 📌 Sobre o Projeto\n\nO **Live Engine** é um portfólio pessoal desenvolvido para ser uma vitrine profissional dinâmica e automatizada. Diferente de portfólios estáticos tradicionais, este projeto se **auto-atualiza**",
+      "technologies": [
+        "CSS"
+      ],
+      "category": "Mobile",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Luizlfc-dev.github.io",
+      "liveUrl": "",
+      "language": "CSS",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-04-13T01:23:54Z",
+      "created_at": "2025-09-22T12:15:00Z"
+    },
+    {
       "id": "projeto---make-an-instagram-app",
       "title": "Projeto Make An Instagram App",
       "shortDescription": "Projeto de estudo para aplicar o meu conhecimento tecnologias em desenvolvimento de interface grafica",
@@ -82,6 +100,22 @@
       "forks": 1,
       "updated_at": "2026-01-15T23:37:22Z",
       "created_at": "2025-11-14T06:04:22Z"
+    },
+    {
+      "id": "luizlfc-dev",
+      "title": "Luizlfc Dev",
+      "shortDescription": "Projeto Luizlfc Dev",
+      "fullDescription": null,
+      "technologies": [],
+      "category": "Web",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Luizlfc-dev",
+      "liveUrl": "",
+      "language": "N/A",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2025-11-17T21:21:14Z",
+      "created_at": "2025-09-21T20:03:30Z"
     },
     {
       "id": "projeto_.net_maui_e_configura-o_docker",
@@ -183,6 +217,6 @@
       "fileUrl": "certificates/Certificadoexcel.pdf"
     }
   ],
-  "lastSync": "2026-04-13T00:13:40.495655+00:00",
-  "lastCertificatesSync": "2026-04-13T00:13:40.495673+00:00"
+  "lastSync": "2026-04-13T01:24:03.079588+00:00",
+  "lastCertificatesSync": "2026-04-13T01:24:03.079608+00:00"
 }
