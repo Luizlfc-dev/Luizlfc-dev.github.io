@@ -1207,6 +1207,94 @@ ol {
   color: var(--accent-purple);
 }
 
+/* ===== AWS LEADERSHIP ===== */
+.aws-leadership {
+  padding: var(--section-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.aws-leadership__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.aws-leadership__content,
+.aws-leadership__media {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.aws-leadership__lead,
+.aws-leadership__text {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.aws-leadership__lead {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.aws-leadership__text {
+  font-size: 0.95rem;
+}
+
+.aws-leadership__highlights {
+  margin-top: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.aws-leadership__highlight {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  padding-left: 16px;
+  position: relative;
+}
+
+.aws-leadership__highlight::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
+}
+
+.aws-leadership__highlight strong {
+  color: var(--text-primary);
+}
+
+.aws-leadership__photo {
+  margin-bottom: 16px;
+}
+
+.aws-leadership__photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+}
+
+.aws-leadership__photo figcaption {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.aws-leadership__video video {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  background: #000;
+}
+
 /* ===== EDUCATION ===== */
 .education {
   padding: var(--section-padding);
@@ -1703,6 +1791,10 @@ ol {
   .timeline__dot {
     left: -36px;
   }
+
+  .aws-leadership__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1766,6 +1858,11 @@ ol {
     flex-wrap: wrap;
   }
 
+  .aws-leadership__content,
+  .aws-leadership__media {
+    padding: 22px;
+  }
+
   .contact__links {
     flex-direction: column;
     align-items: center;
@@ -1794,6 +1891,10 @@ ol {
   .about__stats {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
+  }
+
+  .aws-leadership__photo figcaption {
+    font-size: 0.78rem;
   }
 }
 
