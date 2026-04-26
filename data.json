@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "id": "luizlfc-dev.github.io",
+      "title": "Luizlfc Dev (site)",
+      "shortDescription": "🚀 Live Engine — Portfólio Pessoal",
+      "fullDescription": "# 🚀 Live Engine — Portfólio Pessoal\n\n<div align=\"center\">\n\n**Portfólio profissional com atualização automática de projetos e certificados via GitHub Actions + IA.**\n\n[🔗 Ver o Site](https://luizlfc-dev.github.io/) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)\n\n</div>\n\n---\n\n## 📌 Sobre o Projeto\n\nO **Live Engine** é um portfólio pessoal desenvolvido para ser uma vitrine profissional dinâmica e automatizada. Diferente de portfólios estáticos tradicionais, este projeto se **",
+      "technologies": [
+        "CSS"
+      ],
+      "category": "Mobile",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/Luizlfc-dev.github.io",
+      "liveUrl": "",
+      "language": "CSS",
+      "stars": 1,
+      "forks": 0,
+      "updated_at": "2026-04-26T01:36:09Z",
+      "created_at": "2025-09-22T12:15:00Z"
+    },
+    {
       "id": "curriculo-latex",
       "title": "Curriculo Latex",
       "shortDescription": "Repositorio para o meu Curriculo Latex",
@@ -17,24 +35,6 @@
       "forks": 0,
       "updated_at": "2026-04-18T14:42:17Z",
       "created_at": "2026-04-14T01:13:54Z"
-    },
-    {
-      "id": "luizlfc-dev.github.io",
-      "title": "Luizlfc Dev (site)",
-      "shortDescription": "🚀 Live Engine — Portfólio Pessoal",
-      "fullDescription": "# 🚀 Live Engine — Portfólio Pessoal\n\n<div align=\"center\">\n\n**Portfólio profissional com atualização automática de projetos e certificados via GitHub Actions + IA.**\n\n[🔗 Ver o Site](https://luizlfc-dev.github.io/) · [📂 Repositório](https://github.com/Luizlfc-dev/Luizlfc-dev.github.io)\n\n</div>\n\n---\n\n## 📌 Sobre o Projeto\n\nO **Live Engine** é um portfólio pessoal desenvolvido para ser uma vitrine profissional dinâmica e automatizada. Diferente de portfólios estáticos tradicionais, este projeto se **",
-      "technologies": [
-        "CSS"
-      ],
-      "category": "Mobile",
-      "heroImage": "",
-      "repoUrl": "https://github.com/Luizlfc-dev/Luizlfc-dev.github.io",
-      "liveUrl": "",
-      "language": "CSS",
-      "stars": 1,
-      "forks": 0,
-      "updated_at": "2026-04-13T08:05:13Z",
-      "created_at": "2025-09-22T12:15:00Z"
     },
     {
       "id": "projeto---make-an-instagram-app",
@@ -179,6 +179,54 @@
   ],
   "certificates": [
     {
+      "id": "certificates-5b98f611-b40f-45e7-bff9-3e478fe01d78",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/5b98f611-b40f-45e7-bff9-3e478fe01d78.pdf"
+    },
+    {
+      "id": "certificates-0838390c-5621-4c87-8214-1902d800e44e",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/0838390c-5621-4c87-8214-1902d800e44e.pdf"
+    },
+    {
+      "id": "certificates-0fb87bc7-0495-462c-81fd-287c7e263b7e",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/0fb87bc7-0495-462c-81fd-287c7e263b7e.pdf"
+    },
+    {
+      "id": "certificates-9aa038f0-ec63-4aab-b54b-8dccc321cd0f",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/9aa038f0-ec63-4aab-b54b-8dccc321cd0f.pdf"
+    },
+    {
+      "id": "certificates-d98a9c58-e235-4625-8144-900218aa29d4",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/d98a9c58-e235-4625-8144-900218aa29d4.pdf"
+    },
+    {
+      "id": "certificates-84a8ec9e-8605-47d3-8c66-1d4ed607abe2",
+      "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/84a8ec9e-8605-47d3-8c66-1d4ed607abe2.pdf"
+    },
+    {
       "id": "certificates-certificado-de-concluso-2",
       "title": "Fundamentos de Eletricidade",
       "issuer": "Certificado",
@@ -235,6 +283,6 @@
       "fileUrl": "certificates/Certificado do Word.pdf"
     }
   ],
-  "lastSync": "2026-04-20T08:09:07.787577+00:00",
-  "lastCertificatesSync": "2026-04-20T08:09:07.787595+00:00"
+  "lastSync": "2026-04-26T01:36:20.826183+00:00",
+  "lastCertificatesSync": "2026-04-26T01:36:20.826200+00:00"
 }
