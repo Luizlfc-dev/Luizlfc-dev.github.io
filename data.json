@@ -15,7 +15,7 @@
       "language": "CSS",
       "stars": 1,
       "forks": 0,
-      "updated_at": "2026-04-26T03:06:21Z",
+      "updated_at": "2026-04-26T03:23:26Z",
       "created_at": "2025-09-22T12:15:00Z"
     },
     {
@@ -179,92 +179,92 @@
   ],
   "certificates": [
     {
-      "id": "certificates-5b98f611-b40f-45e7-bff9-3e478fe01d78",
+      "id": "certificates-getting-into-the-serverless-mindset-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/5b98f611-b40f-45e7-bff9-3e478fe01d78.pdf"
+      "fileUrl": "certificates/Getting into the Serverless Mindset (Português).pdf"
     },
     {
-      "id": "certificates-0838390c-5621-4c87-8214-1902d800e44e",
+      "id": "certificates-introduction-to-serverless-development-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/0838390c-5621-4c87-8214-1902d800e44e.pdf"
+      "fileUrl": "certificates/Introduction to Serverless Development (Português).pdf"
     },
     {
-      "id": "certificates-0fb87bc7-0495-462c-81fd-287c7e263b7e",
+      "id": "certificates-retiring-2026-04-30-deep-dive-on-container-security-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/0fb87bc7-0495-462c-81fd-287c7e263b7e.pdf"
+      "fileUrl": "certificates/[RETIRING - 2026-04-30] Deep Dive on Container Security (Português).pdf"
     },
     {
-      "id": "certificates-9aa038f0-ec63-4aab-b54b-8dccc321cd0f",
+      "id": "certificates-retiring-2026-04-30-amazon-eks-primer-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/9aa038f0-ec63-4aab-b54b-8dccc321cd0f.pdf"
+      "fileUrl": "certificates/[RETIRING - 2026-04-30] Amazon EKS Primer (Português).pdf"
     },
     {
-      "id": "certificates-d98a9c58-e235-4625-8144-900218aa29d4",
+      "id": "certificates-aws-lambda-foundations-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/d98a9c58-e235-4625-8144-900218aa29d4.pdf"
+      "fileUrl": "certificates/AWS Lambda Foundations ( Português).pdf"
     },
     {
-      "id": "certificates-84a8ec9e-8605-47d3-8c66-1d4ed607abe2",
+      "id": "certificates-introduction-to-containers-portugu-s",
       "title": "A W S T r a i n i n g & C e r t i fi c a t i o n",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/84a8ec9e-8605-47d3-8c66-1d4ed607abe2.pdf"
+      "fileUrl": "certificates/Introduction to Containers ( Português).pdf"
     },
     {
-      "id": "certificates-certificado-de-concluso-2",
+      "id": "certificates-fundamentos-de-eletricidade",
       "title": "Fundamentos de Eletricidade",
       "issuer": "Certificado",
       "workload": "6h",
       "issuedAt": "12/04/26",
-      "fileUrl": "certificates/Certificado_de_Concluso (2).pdf"
+      "fileUrl": "certificates/Fundamentos de Eletricidade.pdf"
     },
     {
-      "id": "certificates-certificado-de-concluso-3",
+      "id": "certificates-fundamentos-de-intelig-ncia-artificial-para-sistemas-embarcados",
       "title": "Fundamentos de Inteligência Artificial para Sistemas Embarcados",
       "issuer": "Certificado",
       "workload": "8h",
       "issuedAt": "12/04/26",
-      "fileUrl": "certificates/Certificado_de_concluso (3).pdf"
+      "fileUrl": "certificates/Fundamentos de Inteligência Artificial para Sistemas Embarcados.pdf"
     },
     {
-      "id": "certificates-certificado-de-concluso",
+      "id": "certificates-fundamentos-em-python",
       "title": "Fundamentos em Python",
       "issuer": "Certificado",
       "workload": "8h",
       "issuedAt": "11/04/26",
-      "fileUrl": "certificates/Certificado_de_concluso.pdf"
+      "fileUrl": "certificates/Fundamentos em Python.pdf"
     },
     {
-      "id": "certificates-certificado-de-concluso-1",
+      "id": "certificates-introdu-o-a-sistemas-embarcados",
       "title": "Introdução a Sistemas Embarcados",
       "issuer": "Certificado",
       "workload": "8h",
       "issuedAt": "12/04/26",
-      "fileUrl": "certificates/Certificado_de_concluso (1).pdf"
+      "fileUrl": "certificates/Introdução a Sistemas Embarcados.pdf"
     },
     {
-      "id": "certificates-3532916688lc-1",
+      "id": "certificates-cloudfundamentals-4linux",
       "title": "Luiz Carvalho",
       "issuer": "Google Cloud Platform",
       "workload": "20h",
       "issuedAt": "23/04/2026",
-      "fileUrl": "certificates/3532916688LC (1).pdf"
+      "fileUrl": "certificates/CloudFundamentals-4linux.pdf"
     },
     {
       "id": "certificates-certificadoexcel",
@@ -275,22 +275,22 @@
       "fileUrl": "certificates/Certificadoexcel.pdf"
     },
     {
-      "id": "certificates-certificado-2-powerpoint",
+      "id": "certificates-certificadopowerpoint",
       "title": "MICROSOFT POWERPOINT 2016 - BÁSICO",
       "issuer": "Fundação Bradesco | Escola Virtual",
       "workload": "8h",
       "issuedAt": "18/06/2022",
-      "fileUrl": "certificates/Certificado (2)powerpoint.pdf"
+      "fileUrl": "certificates/Certificadopowerpoint.pdf"
     },
     {
-      "id": "certificates-certificado-do-word",
+      "id": "certificates-certificadoword",
       "title": "MICROSOFT WORD 2016 - BÁSICO",
       "issuer": "Fundação Bradesco | Escola Virtual",
       "workload": "9h",
       "issuedAt": "15/06/2022",
-      "fileUrl": "certificates/Certificado do Word.pdf"
+      "fileUrl": "certificates/CertificadoWord.pdf"
     }
   ],
-  "lastSync": "2026-04-26T03:09:33.569002+00:00",
-  "lastCertificatesSync": "2026-04-26T03:09:33.569021+00:00"
+  "lastSync": "2026-04-26T03:23:42.765318+00:00",
+  "lastCertificatesSync": "2026-04-26T03:23:42.765337+00:00"
 }
