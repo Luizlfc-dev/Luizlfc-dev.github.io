@@ -15,7 +15,7 @@
       "language": "CSS",
       "stars": 1,
       "forks": 0,
-      "updated_at": "2026-06-01T11:35:14Z",
+      "updated_at": "2026-06-08T10:56:56Z",
       "created_at": "2025-09-22T12:15:00Z"
     },
     {
@@ -179,12 +179,12 @@
   ],
   "certificates": [
     {
-      "id": "certificates-introduction-to-serverless-development-portugu-s",
+      "id": "certificates-retiring-2026-04-30-amazon-eks-primer-portugu-s",
       "title": "AWS Training & Certification",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/Introduction to Serverless Development (Português).pdf"
+      "fileUrl": "certificates/[RETIRING - 2026-04-30] Amazon EKS Primer (Português).pdf"
     },
     {
       "id": "certificates-introduction-to-containers-portugu-s",
@@ -195,6 +195,14 @@
       "fileUrl": "certificates/Introduction to Containers ( Português).pdf"
     },
     {
+      "id": "certificates-introduction-to-serverless-development-portugu-s",
+      "title": "AWS Training & Certification",
+      "issuer": "Certificado",
+      "workload": "",
+      "issuedAt": "",
+      "fileUrl": "certificates/Introduction to Serverless Development (Português).pdf"
+    },
+    {
       "id": "certificates-retiring-2026-04-30-deep-dive-on-container-security-portugu-s",
       "title": "AWS Training & Certification",
       "issuer": "Certificado",
@@ -203,12 +211,12 @@
       "fileUrl": "certificates/[RETIRING - 2026-04-30] Deep Dive on Container Security (Português).pdf"
     },
     {
-      "id": "certificates-retiring-2026-04-30-amazon-eks-primer-portugu-s",
+      "id": "certificates-getting-into-the-serverless-mindset-portugu-s",
       "title": "AWS Training & Certification",
       "issuer": "Certificado",
       "workload": "",
       "issuedAt": "",
-      "fileUrl": "certificates/[RETIRING - 2026-04-30] Amazon EKS Primer (Português).pdf"
+      "fileUrl": "certificates/Getting into the Serverless Mindset (Português).pdf"
     },
     {
       "id": "certificates-aws-lambda-foundations-portugu-s",
@@ -217,14 +225,6 @@
       "workload": "",
       "issuedAt": "",
       "fileUrl": "certificates/AWS Lambda Foundations ( Português).pdf"
-    },
-    {
-      "id": "certificates-getting-into-the-serverless-mindset-portugu-s",
-      "title": "AWS Training & Certification",
-      "issuer": "Certificado",
-      "workload": "",
-      "issuedAt": "",
-      "fileUrl": "certificates/Getting into the Serverless Mindset (Português).pdf"
     },
     {
       "id": "certificates-fundamentos-de-eletricidade",
@@ -291,6 +291,6 @@
       "fileUrl": "certificates/CertificadoWord.pdf"
     }
   ],
-  "lastSync": "2026-06-08T10:56:51.934930+00:00",
-  "lastCertificatesSync": "2026-06-08T10:56:51.934952+00:00"
+  "lastSync": "2026-06-15T12:15:06.177629+00:00",
+  "lastCertificatesSync": "2026-06-15T12:15:06.177651+00:00"
 }
