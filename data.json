@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "id": "minicurso-git-actions",
+      "title": "Minicurso Git Actions",
+      "shortDescription": "Guia de estudos e prática de Git, GitHub e GitHub Actions para minicursos e eventos",
+      "fullDescription": "# Minicurso Git, GitHub e GitHub Actions\n\nMaterial de estudo e prática do minicurso sobre versionamento com Git, colaboração no GitHub e automação com GitHub Actions. O repositório tem duas partes que se completam. A primeira é um guia de estudos curto, dividido em arquivos numerados, que vai do primeiro commit até a leitura de um workflow linha por linha. A segunda é uma prática guiada em que cada participante cria a própria cópia deste repositório e vê, na aba Actions, workflows de verdade rod",
+      "technologies": [
+        "Shell"
+      ],
+      "category": "Automação",
+      "heroImage": "",
+      "repoUrl": "https://github.com/Luizlfc-dev/minicurso-git-actions",
+      "liveUrl": "",
+      "language": "Shell",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-10-21T09:11:13Z",
+      "created_at": "2026-10-21T08:09:58Z"
+    },
+    {
       "id": "luizlfc-dev.github.io",
       "title": "Luizlfc Dev (site)",
       "shortDescription": "🚀 Live Engine — Portfólio Pessoal",
@@ -15,7 +33,7 @@
       "language": "CSS",
       "stars": 1,
       "forks": 0,
-      "updated_at": "2026-10-12T14:36:10Z",
+      "updated_at": "2026-10-19T12:19:50Z",
       "created_at": "2025-09-22T12:15:00Z"
     },
     {
@@ -291,6 +309,6 @@
       "fileUrl": "certificates/CertificadoWord.pdf"
     }
   ],
-  "lastSync": "2026-10-19T12:19:43.820233+00:00",
-  "lastCertificatesSync": "2026-10-19T12:19:43.820253+00:00"
+  "lastSync": "2026-10-26T12:22:27.123976+00:00",
+  "lastCertificatesSync": "2026-10-26T12:22:27.123995+00:00"
 }
